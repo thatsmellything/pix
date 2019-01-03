@@ -32,3 +32,5 @@ public interface DigitalPicture
   public void explore(); // explore the picture
   public boolean write(String fileName); // write out a file
 }
+
+//An interface says "I promise to have these methods"
