@@ -34,6 +34,24 @@ public class PictureTester
     caterpillar.explore();
   }
   
+  /** Method to test mirrorVerticalRL */
+  public static void testMirrorVerticleRL()
+  {
+	  Picture CumberlandIsland = new Picture("CumberlandIsland.jpg");
+	  CumberlandIsland.explore();
+	  CumberlandIsland.mirrorVerticleRL();
+	  CumberlandIsland.explore();
+  }
+  
+  /** Method to test mirrorHorizontal */
+  public static void testMirrorHorizontal()
+  {
+	  Picture arch = new Picture("arch.jpg");
+	  arch.explore();
+	  arch.mirrorHorizontal();
+	  arch.explore();
+  }
+  
   /** Method to test mirrorTemple */
   public static void testMirrorTemple()
   {
@@ -41,6 +59,14 @@ public class PictureTester
     temple.explore();
     temple.mirrorTemple();
     temple.explore();
+  }
+  /** Method to test mirrorGull */
+  public static void testMirrorGull()
+  {
+	  Picture gull = new Picture("seagull.jpg");
+	  gull.explore();
+	  gull.mirrorGull();
+	  gull.explore();
   }
   
   /** Method to test the collage method */
@@ -66,8 +92,8 @@ public class PictureTester
     // uncomment a call here to run a test
     // and comment out the ones you don't want
     // to run
-    testZeroBlue();
-    testZeroRed();
+    //testZeroBlue();
+    //testZeroRed();
     //testKeepOnlyBlue();
     //testKeepOnlyRed();
     //testKeepOnlyGreen();
@@ -75,9 +101,11 @@ public class PictureTester
     //testGrayscale();
     //testFixUnderwater();
     testMirrorVertical();
-    //testMirrorTemple();
+    testMirrorVerticleRL();
+    testMirrorHorizontal();
+    testMirrorTemple();
     //testMirrorArms();
-    //testMirrorGull();
+    testMirrorGull();
     //testMirrorDiagonal();
     //testCollage();
     //testCopy();

@@ -131,7 +131,7 @@ public class Picture extends SimplePicture
     } 
   }
   
-  public void mirrorverticleRL()
+  public void mirrorVerticleRL()
   {
 	  Pixel[][] pixels = this.getPixels2D();
 	    Pixel leftPixel = null;
@@ -147,6 +147,8 @@ public class Picture extends SimplePicture
 	      }
 	    } 
   }
+  
+  
   public void mirrorHorizontal()
   {
 	  Pixel[][] pixels = this.getPixels2D();
@@ -187,6 +189,24 @@ public class Picture extends SimplePicture
         rightPixel.setColor(leftPixel.getColor());
       }
     }
+  }
+  public void mirrorGull()
+  {
+	  int mirrorPoint = 349;
+	  Pixel leftPixel = null;
+	  Pixel rightPixel = null;
+	  int count = 0;
+	  Pixel[][] pixels = this.getPixels2D();
+	  for (int row = 237; row < 324; row ++)
+	  {
+		for (int col = 227; col < mirrorPoint; col++)
+		{
+			leftPixel = pixels[row][col];      
+	        rightPixel = pixels[row]                       
+	                         [mirrorPoint - col + mirrorPoint];
+	        rightPixel.setColor(leftPixel.getColor());
+		}
+	  }
   }
   
   /** copy from the passed fromPic to the
@@ -276,7 +296,7 @@ public class Picture extends SimplePicture
     beach.explore();
     beach.mirrorHorizontal();
     beach.mirrorVertical();
-    beach.mirrorverticleRL();
+    beach.mirrorVerticleRL();
   }
   
 } // this } is the end of class Picture, put all new methods before this
