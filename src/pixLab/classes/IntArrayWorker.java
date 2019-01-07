@@ -117,5 +117,37 @@ public class IntArrayWorker
       }
     }
   }
+  
+  public int getLargest()
+  {
+	  int largest = Integer.MIN_VALUE;//This creates a very very very low number that will always be beaten by any other value it is compared to
+	  for (int row = 0; row < matrix.length; row++)
+	  {
+		  for (int col = 0; col < matrix[0].length; col++)
+		  {
+			  if (largest < matrix[row][col])
+			  {
+				  largest = matrix[row][col];
+			  }
+		  }
+	  }
+	  
+	  return largest;
+  }
+  
+  public int getColTotal(int total)
+  {
+	  int colTotal = 0;
+	  for (int row = 0; row < matrix.length; row++)
+	  {
+		  for (int col = 0; col < matrix[0].length; col++)
+		  {
+			  
+			  colTotal = colTotal + matrix[0][col];
+		  }
+	  }
+	  
+	  return colTotal;
+  }
  
 }

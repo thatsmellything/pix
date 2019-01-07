@@ -131,14 +131,14 @@ public class Picture extends SimplePicture
     } 
   }
   
-  public void mirrorverticleRL()
-  {
-	  Pixel[][] pixels = this.getPixels2D();
-	    Pixel leftPixel = null;
-	    Pixel rightPixel = null;
-	    int width = pixels[0].length;
-	    for (int )
-  }
+//  public void mirrorverticleRL()
+//  {
+//	  Pixel[][] pixels = this.getPixels2D();
+//	    Pixel leftPixel = null;
+//	    Pixel rightPixel = null;
+//	    int width = pixels[0].length;
+//	    for (int )
+//  }
   
   
   /** Mirror just part of a picture of a temple */
