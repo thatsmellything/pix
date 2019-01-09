@@ -86,6 +86,35 @@ public class Picture extends SimplePicture
     
   }
   
+  // Glitcher
+  public void glitch(Picture image, int startRow, int startCol)
+  {
+
+	  Pixel fromPixel = null;
+	  Pixel toPixel = null;
+	  Pixel[][] toPixels = this.getPixels2D();
+	  Pixel[][] fromPixels = image.getPixels2D();
+	  for (int fromRow = 0, toRow = startRow; 
+		         fromRow < fromPixels.length &&
+		         toRow < toPixels.length; 
+		         fromRow++, toRow++)
+		    {
+		      for (int fromCol = 0, toCol = startCol; 
+		           fromCol < fromPixels[0].length &&
+		           toCol < toPixels[0].length;  
+		           fromCol++, toCol++)
+		      {
+		    	  fromPixel = fromPixels[fromRow][fromCol];
+		          toPixel = toPixels[toRow][toCol];
+		          toPixel.setBlue(0);
+		          toPixel.setAlpha(125);
+		      }
+		    }
+
+  }
+  
+  
+  
   /** Method to set the blue to 0 */
   public void zeroBlue()
   {
@@ -190,6 +219,7 @@ public class Picture extends SimplePicture
       }
     }
   }
+  //Lets make a friend for the other seagull
   public void mirrorGull()
   {
 	  int mirrorPoint = 349;

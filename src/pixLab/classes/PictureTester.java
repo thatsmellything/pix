@@ -9,6 +9,16 @@ package pixLab.classes;
  */
 public class PictureTester
 {
+	public static void testGlitch()
+	{
+		Picture image = new Picture("png.png");
+		Picture sm = new Picture("Small-mario.png");
+		image.explore();
+		image.glitch(image, 0, 0);
+		sm.glitch(image, 0, 0);
+		image.explore();
+	}
+	
   /** Method to test zeroBlue */
   public static void testZeroBlue()
   {
@@ -100,12 +110,13 @@ public class PictureTester
     //testNegate();
     //testGrayscale();
     //testFixUnderwater();
-    testMirrorVertical();
-    testMirrorVerticleRL();
-    testMirrorHorizontal();
-    testMirrorTemple();
+	  testGlitch();
+//    testMirrorVertical();
+//    testMirrorVerticleRL();
+//    testMirrorHorizontal();
+//    testMirrorTemple();
     //testMirrorArms();
-    testMirrorGull();
+    //testMirrorGull();
     //testMirrorDiagonal();
     //testCollage();
     //testCopy();
