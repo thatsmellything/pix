@@ -86,6 +86,22 @@ public class Picture extends SimplePicture
     
   }
   
+  public void chromaKey(Picture replacement, Color changeColor)
+  {
+	  Pixel[][] mainPixels = this.getPixels2D();
+	  Pixel[][] replacementPixels = replacement.getPixels2D();
+	  for (int row = 0; row < mainPixels.length; row++)
+	  {
+		  for (int col = 0; col < mainPixels[0].length; col++)
+		  {
+			  if (mainPixels[row][col].colorDistance(changeColor) < 100)
+			  {
+				  mainPixels[row][col].setColor(replacementPixels[row][col].getColor());
+			  }
+		  }
+	  }
+  }
+  
   // Glitcher
   public void glitch(Picture image, int startRow, int startCol)
   {

@@ -1,4 +1,7 @@
 package pixLab.classes;
+
+import java.awt.Color;
+
 /**
  * This class contains class (static) methods
  * that will help you test the Picture class 
@@ -9,13 +12,22 @@ package pixLab.classes;
  */
 public class PictureTester
 {
+	public static void testChromaKey()
+	{
+		Picture source = new Picture("map.jpg");
+		Picture background = new Picture("flag2.jpg");
+		source.explore();
+		background.explore();
+		source.chromaKey(background, Color.WHITE);
+		source.explore();
+	}
+	
 	public static void testGlitch()
 	{
 		Picture image = new Picture("png.png");
 		Picture sm = new Picture("Small-mario.png");
 		image.explore();
 		image.glitch(image, 0, 0);
-		sm.glitch(image, 0, 0);
 		image.explore();
 	}
 	
@@ -110,7 +122,8 @@ public class PictureTester
     //testNegate();
     //testGrayscale();
     //testFixUnderwater();
-	  testGlitch();
+	//testGlitch();
+	  testChromaKey();
 //    testMirrorVertical();
 //    testMirrorVerticleRL();
 //    testMirrorHorizontal();
