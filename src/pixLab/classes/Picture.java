@@ -331,18 +331,117 @@ public class Picture extends SimplePicture
   }
   
   
+  public void shiftLeftRight(int amount)
+  {
+	  Pixel[][] pixels = this.getPixels2D();
+	  Picture temp = new Picture(this);
+	  Pixel[][] copied = temp.getPixels2D();
+	  
+	  int shiftedValue = amount;
+	  int width = pixels[0].length;
+	  
+	  for(int row = 0; row < pixels.length; row++)
+	  {
+		  for (int col = 0; col < pixels[0].length; col++)
+		  {
+			  shiftedValue = (col + amount) % width;
+			  copied[row][col].setColor(pixels[row][shiftedValue].getColor());
+		  }
+	  }
+	  for(int row = 0; row < pixels.length; row++)
+	  {
+		  for (int col = 0; col < pixels[0].length; col++)
+		  {
+			  pixels[row][col].setColor(copied[row][col].getColor());
+		  }
+	  }
+  }
+  
+  public void shiftUpDown(int amount)
+  {
+	  Pixel[][] pixels = this.getPixels2D();
+	  Picture temp = new Picture(this);
+	  Pixel[][] copied = temp.getPixels2D();
+	  
+	  int shiftedValue = amount;
+	  int height = pixels.length;
+	  
+	  for(int row = 0; row < pixels.length; row++)
+	  {
+		  for (int col = 0; col < pixels[0].length; col++)
+		  {
+			  shiftedValue = (col + amount) % height;
+			  copied[row][col].setColor(pixels[row][shiftedValue].getColor());
+		  }
+	  }
+	  for(int row = 0; row < pixels.length; row++)
+	  {
+		  for (int col = 0; col < pixels[0].length; col++)
+		  {
+			  pixels[row][col].setColor(copied[row][col].getColor());
+		  }
+	  }
+  }
+  
+  
+  
   /* Main method for testing - each class in Java can have a main 
    * method 
    */
+  
+  // SUPER GLITCHER -------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  public void superGlitcher()
+  {
+	  Pixel[][] pixels = this.getPixels2D();
+	  for (Pixel[] rowArray : pixels)
+	  {
+		  for (Pixel pixelObj : rowArray)
+		  {
+			  //colors
+			  int red = pixelObj.getRed();
+			  int redPercent = red * 127/255;
+			  pixelObj.setRed(redPercent);
+			  int green = pixelObj.getGreen();
+			  int greenPercent = green * 20/255;
+			  pixelObj.setGreen(greenPercent);
+			  
+			  //flip horizontal
+			  Pixel upPixel = null;
+			  Pixel downPixel = null;
+			  int height = pixels.length;
+			  for (int col = 0; col < pixels[0].length; col++)
+			  {
+				  for (int row = 0; row < height / 2; row++)
+				  {
+					  upPixel = pixels[row][col];
+					  downPixel = pixels[height - 1 - row][col];
+					  int blahR = upPixel.getRed();
+					  int blahG = upPixel.getGreen();
+					  int blahB = upPixel.getBlue();
+					  int blehR = downPixel.getRed();
+					  int blehG = downPixel.getGreen();
+					  int blehB = downPixel.getBlue();
+					//  downPixel.setColor(blahR-blehR, blahG-blehG, blahB-blehB);
+				  }
+			  }
+		  }
+	  }
+  }
+  
+  
+  
   public static void main(String[] args) 
   {
     Picture beach = new Picture("beach.jpg");
-    beach.explore();
-    beach.zeroBlue();
-    beach.explore();
-    beach.mirrorHorizontal();
-    beach.mirrorVertical();
-    beach.mirrorVerticleRL();
+//    beach.explore();
+//    beach.zeroBlue();
+ //   beach.explore();
+ //   beach.mirrorHorizontal();
+ //   beach.mirrorVertical();
+ //   beach.mirrorVerticleRL();
+    Picture dangerDays = new Picture("dangerDays.jpg");
+    dangerDays.superGlitcher();
+    
   }
   
 } // this } is the end of class Picture, put all new methods before this

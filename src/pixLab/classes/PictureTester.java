@@ -107,10 +107,34 @@ public class PictureTester
     swan.explore();
   }
   
+  public static void testSuperGlitcher()
+  {
+	  Picture pic = new Picture("dangerDays.jpg");
+	  pic.explore();
+	  pic.superGlitcher();
+	  pic.explore();
+  }
+  public static void testShiftLeftRight()
+  {
+	  Picture pic = new Picture("dangerDays.jpg");
+	  pic.explore();
+	  pic.superGlitcher();
+	  pic.explore();
+  }
+  
+  public static void testSteganography()
+  {
+	  Picture source = new Picture("muhammadAli.jpg");
+	  Picture message = new Picture("quote.jpg");
+  }
+  
   /** Main method for testing.  Every class can have a main
     * method in Java */
   public static void main(String[] args)
   {
+	  
+	  testSuperGlitcher();
+	  testSteganography();
     // uncomment a call here to run a test
     // and comment out the ones you don't want
     // to run
@@ -123,7 +147,7 @@ public class PictureTester
     //testGrayscale();
     //testFixUnderwater();
 	//testGlitch();
-	  testChromaKey();
+//	  testChromaKey();
 //    testMirrorVertical();
 //    testMirrorVerticleRL();
 //    testMirrorHorizontal();
@@ -141,5 +165,6 @@ public class PictureTester
     //testSetRedToHalfValueInTopHalf();
     //testClearBlueOverValue(200);
     //testGetAverageForColumn(0);
+	//  testShiftLeftRight();
   }
 }
