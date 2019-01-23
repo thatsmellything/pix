@@ -125,7 +125,13 @@ public class PictureTester
   public static void testSteganography()
   {
 	  Picture source = new Picture("muhammadAli.jpg");
-	  Picture message = new Picture("quote.jpg");
+	  Picture message = new Picture("quote2.jpg");
+	  source.explore();
+	  message.explore();
+	  source.hidePicture(message);
+	  source.explore();
+	  source.revealPicture();
+	  source.explore();
   }
   
   /** Main method for testing.  Every class can have a main
@@ -133,7 +139,7 @@ public class PictureTester
   public static void main(String[] args)
   {
 	  
-	  testSuperGlitcher();
+	//  testSuperGlitcher();
 	  testSteganography();
     // uncomment a call here to run a test
     // and comment out the ones you don't want
