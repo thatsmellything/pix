@@ -139,8 +139,8 @@ public class PictureTester
   public static void main(String[] args)
   {
 	  
-	//  testSuperGlitcher();
-	  testSteganography();
+	 testSuperGlitcher();
+	//  testSteganography();
     // uncomment a call here to run a test
     // and comment out the ones you don't want
     // to run

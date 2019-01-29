@@ -5,7 +5,12 @@ import java.awt.geom.*;
 import java.awt.image.BufferedImage;
 import java.text.*;
 import java.util.*;
-import java.util.List; // resolves problem with java.awt.List and java.util.List
+import java.util.List;
+import java.awt.AlphaComposite;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.Image;
+import java.awt.image.BufferedImage;// resolves problem with java.awt.List and java.util.List
 
 /**
  * A class that represents a picture.  This class inherits from 
@@ -438,7 +443,65 @@ public class Picture extends SimplePicture
   // SUPER GLITCHER -------------------------------------------------------------------------------------------------------------------------------------------------------------------
   public void superGlitcher()
   {
+	  
 	  Pixel[][] pixels = this.getPixels2D();
+	  Pixel changePixel = null;
+	  for (int row = 75; row >= 0; row--)
+	  {
+		  for (int col = 75; col >= 0; col--)
+		  {
+			  int red = changePixel.getRed();
+			  int redPercent = red * 2;
+			 changePixel.setRed(redPercent);
+		  }
+	  }
+	  
+	//Go through all pixels and set blue to zero
+	    for (Pixel[] rowArray : pixels)
+	    {
+	      for (Pixel pixelObj : rowArray)
+	      {
+	    	  int blue = pixelObj.getBlue();
+	    	  int bluePercent = blue * 10; 
+	        pixelObj.setBlue(bluePercent);
+	        
+	        
+	      }
+	    }
+	    //Horizontal mirror
+	    Pixel upPixel = null;
+		  Pixel downPixel = null;
+		  int height = pixels.length;
+		  for (int col = 0; col < pixels[0].length; col++)
+		  {
+			  for (int row = 0; row < height / 2; row++)
+			  {
+				  upPixel = pixels[row][col];
+				  downPixel = pixels[height - 1 - row][col];
+				  downPixel.setColor(upPixel.getColor());
+			  }
+		  }
+		  
+		  //Vertical Mirror
+		  Pixel leftPixel = null;
+		    Pixel rightPixel = null;
+		    int width = pixels[0].length;
+		    for (int row = 0; row < pixels.length; row++)
+		    {
+		      for (int col = 0; col < width / 2; col++)
+		      {
+		        leftPixel = pixels[row][col];
+		        rightPixel = pixels[row][width - 1 - col];
+		        rightPixel.setColor(leftPixel.getColor());
+		      }
+		    } 
+	  
+	  
+	  
+	  
+	  
+/*	  
+      Pixel[][] pixels = this.getPixels2D();
 	  for (Pixel[] rowArray : pixels)
 	  {
 		  for (Pixel pixelObj : rowArray)
@@ -448,7 +511,7 @@ public class Picture extends SimplePicture
 			  int redPercent = red * 127/255;
 			  pixelObj.setRed(redPercent);
 			  int green = pixelObj.getGreen();
-			  int greenPercent = green * 20/255;
+			  int greenPercent = green * 0/255;
 			  pixelObj.setGreen(greenPercent);
 			  
 			  //flip horizontal
@@ -467,11 +530,13 @@ public class Picture extends SimplePicture
 					  int blehR = downPixel.getRed();
 					  int blehG = downPixel.getGreen();
 					  int blehB = downPixel.getBlue();
+
 					//  downPixel.setColor(blahR-blehR, blahG-blehG, blahB-blehB);
 				  }
 			  }
 		  }
-	  }
+		}
+		*/
   }
   
   
