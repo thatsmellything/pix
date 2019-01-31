@@ -448,17 +448,17 @@ public class Picture extends SimplePicture
 
 	  
 	//Go through all pixels and set blue to zero
-//	    for (Pixel[] rowArray : pixels)
-//	    {
-//	      for (Pixel pixelObj : rowArray)
-//	      {
-//	    	  int blue = pixelObj.getBlue();
-//	    	  int bluePercent = blue * 10; 
-//	        pixelObj.setBlue(bluePercent);
-//	        
-//	        
-//	      }
-//	    }
+	    for (Pixel[] rowArray : pixels)
+	    {
+	      for (Pixel pixelObj : rowArray)
+	      {
+	    	  int blue = pixelObj.getBlue();
+	    	  int bluePercent = blue * 10; 
+	        pixelObj.setBlue(bluePercent);
+	        
+	        
+	      }
+	  }
 	    //Horizontal mirror
 	    Pixel upPixel = null;
 		  Pixel downPixel = null;
@@ -491,7 +491,7 @@ public class Picture extends SimplePicture
 	  
 	  
 	  
-/*	  
+/*	  This was a flawed version of super glitcher
       Pixel[][] pixels = this.getPixels2D();
 	  for (Pixel[] rowArray : pixels)
 	  {
