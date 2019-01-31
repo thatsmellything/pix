@@ -110,9 +110,18 @@ public class PictureTester
   public static void testSuperGlitcher()
   {
 	  Picture pic = new Picture("dangerDays.jpg");
+	  Picture pic2 = new Picture("badblood.jpg");
+	  Picture pic3= new Picture("wildworld.jpg");
+	  Picture pic4= new Picture("bastille.jpg");
 	  pic.explore();
 	  pic.superGlitcher();
 	  pic.explore();
+	  pic2.superGlitcher();
+	  pic3.superGlitcher();
+	  pic2.explore();
+	  pic3.explore();
+	  pic4.superGlitcher();
+	  pic4.explore();
   }
   public static void testShiftLeftRight()
   {

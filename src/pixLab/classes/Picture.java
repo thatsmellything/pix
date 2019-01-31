@@ -445,29 +445,20 @@ public class Picture extends SimplePicture
   {
 	  
 	  Pixel[][] pixels = this.getPixels2D();
-	  Pixel changePixel = null;
-	  for (int row = 75; row >= 0; row--)
-	  {
-		  for (int col = 75; col >= 0; col--)
-		  {
-			  int red = changePixel.getRed();
-			  int redPercent = red * 2;
-			 changePixel.setRed(redPercent);
-		  }
-	  }
+
 	  
 	//Go through all pixels and set blue to zero
-	    for (Pixel[] rowArray : pixels)
-	    {
-	      for (Pixel pixelObj : rowArray)
-	      {
-	    	  int blue = pixelObj.getBlue();
-	    	  int bluePercent = blue * 10; 
-	        pixelObj.setBlue(bluePercent);
-	        
-	        
-	      }
-	    }
+//	    for (Pixel[] rowArray : pixels)
+//	    {
+//	      for (Pixel pixelObj : rowArray)
+//	      {
+//	    	  int blue = pixelObj.getBlue();
+//	    	  int bluePercent = blue * 10; 
+//	        pixelObj.setBlue(bluePercent);
+//	        
+//	        
+//	      }
+//	    }
 	    //Horizontal mirror
 	    Pixel upPixel = null;
 		  Pixel downPixel = null;
